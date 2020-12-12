@@ -4,7 +4,9 @@
 
 const GENRES = {
   scifi: 'Science Fiction',
-  hisfi: 'Historical fiction'
+  hisfi: 'Historical fiction',
+  fantasy: 'fantasy',
+  metaphorical: 'metaphorical fiction'
 };
 
 export { GENRES };
