@@ -14,7 +14,7 @@ import {} from '../constants.js';
  * @property {Boolean} _read     Indicates whether the book has been read.
  * @property {Date}    _readDate Date when the book was read.
  */
-export class Book {
+class Book {
   /**
    * @constructor
    * @description Creates a new Book.
@@ -32,4 +32,15 @@ export class Book {
     this._read = read;
     this._readDate = readDate;
   }
+
+  /**
+   * @description Marks the book as read.
+   */
+
+  markAsRead() {
+    this._read = true;
+    this._readDate = new Date(Date.now());
+  }
 }
+
+export { Book };
