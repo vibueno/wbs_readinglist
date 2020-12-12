@@ -20,8 +20,6 @@ class Booklist {
   /**
    * @constructor
    * @description Creates a new Booklist.
-   *
-   * @param {}
    */
   constructor(
     books = [],
@@ -52,7 +50,7 @@ class Booklist {
   /**
    * @description Returns the first unread book in the list
    *
-   * @return {Book} book Next book to be read
+   * @return {Book} book Next unread book
    */
 
   getFirstUnreadBook() {
@@ -63,7 +61,7 @@ class Booklist {
   }
 
   /**
-   * @description Performs actions after finishing book
+   * @description Performs actions related to finishing current book
    */
 
   finishCurrentBook() {

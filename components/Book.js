@@ -2,7 +2,8 @@
  * @module Book
  */
 
-import {} from '../constants.js';
+import { GENRES } from '../constants.js';
+import { NonExistingGenreError } from './Error.js';
 
 /**
  * @class
@@ -27,7 +28,10 @@ class Book {
    */
   constructor(title, genre, author, read = false, readDate = null) {
     this._title = title;
-    this._genre = genre;
+
+    if (!(genre in GENRES)) throw new NonExistingGenreError();
+    else this._genre = genre;
+
     this._author = author;
     this._read = read;
     this._readDate = readDate;

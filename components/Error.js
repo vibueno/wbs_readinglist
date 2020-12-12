@@ -1,3 +1,11 @@
+class NonExistingGenreError extends Error {
+  constructor() {
+    super();
+    this.name = 'NonExistingGenreError';
+    this.date = new Date();
+  }
+}
+
 class NoCurrentBookError extends Error {
   constructor() {
     super();
@@ -14,4 +22,4 @@ class NoUnreadBooksError extends Error {
   }
 }
 
-export { NoCurrentBookError, NoUnreadBooksError };
+export { NonExistingGenreError, NoCurrentBookError, NoUnreadBooksError };
