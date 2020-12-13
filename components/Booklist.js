@@ -49,7 +49,7 @@ class Booklist {
       throw new IncorrectBookIndexError();
 
     this._books = books;
-    this._nextBook = this.getFirstUnreadBookId();
+    this._nextBook = this.getFirstUnreadBookIndex();
     this._currentBook = currentBook;
     this._lastBook = lastBook;
   }
@@ -108,7 +108,7 @@ class Booklist {
    *
    * @return {Object} Book Next unread book.
    */
-  getFirstUnreadBookId() {
+  getFirstUnreadBookIndex() {
     const nextUnreadBook = this._books.findIndex(book => !book._read);
 
     if (nextUnreadBook === -1)
@@ -126,10 +126,10 @@ class Booklist {
   startReadingBook() {
     if (this._currentBook) throw new AlreadyReadingError();
 
-    this._currentBook = this.getFirstUnreadBookId();
+    this._currentBook = this.getFirstUnreadBookIndex();
 
     try {
-      this._nextBook = this.getFirstUnreadBookId();
+      this._nextBook = this.getFirstUnreadBookIndex();
     } catch (NoUnreadBooksError) {
       this._nextBook = null;
     }
@@ -148,7 +148,7 @@ class Booklist {
     this._lastBook = this._currentBook;
     this._currentBook = null;
     try {
-      this._nextBook = this.getFirstUnreadBookId();
+      this._nextBook = this.getFirstUnreadBookIndex();
     } catch (NoUnreadBooksError) {
       this._nextBook = null;
     }
